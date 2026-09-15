@@ -1,235 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Paguyuban Jogja Bersatu — Bersama, bergerak, berdampak untuk masyarakat.">
-  <title>Paguyuban Jogja Bersatu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Paguyuban Jogja Bersatu — organisasi sosial masyarakat yang bergerak untuk kolaborasi, kepedulian, dan dampak sosial.">
+  <title>Paguyuban Jogja Bersatu — Bersatu, Berdampak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar" id="navbar">
-    <div class="container nav-inner">
-      <a href="#home" class="brand">
+  <header class="site-header" id="beranda">
+    <div class="container nav-wrap">
+      <a class="brand" href="#beranda" aria-label="Paguyuban Jogja Bersatu - Beranda">
         <img src="logo-pjb.png" alt="Logo Paguyuban Jogja Bersatu">
-        <span>Paguyuban Jogja Bersatu</span>
+        <span>
+          <strong>Paguyuban Jogja</strong>
+          <small>Bersatu</small>
+        </span>
       </a>
 
-      <nav class="nav-links">
-        <a href="#home">Beranda</a>
+      <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
         <a href="#tentang">Tentang</a>
         <a href="#program">Program</a>
+        <a href="#dampak">Dampak</a>
         <a href="#kontak">Kontak</a>
+        <div class="nav-actions">
+          <button class="btn btn-ghost" data-open-auth="login">Masuk</button>
+          <button class="btn btn-primary" data-open-auth="register">Daftar</button>
+        </div>
       </nav>
-
-      <div class="actions">
-        <button class="btn btn-outline" data-modal="login">Login</button>
-        <button class="btn btn-primary" data-modal="register">Daftar</button>
-        <button class="menu" id="menu" aria-label="Buka menu">☰</button>
-      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="home">
+    <section class="hero section">
       <div class="container hero-grid">
-        <div>
-          <div class="eyebrow"><span class="dot"></span> Organisasi sosial masyarakat</div>
-          <h1>Bergerak bersama,<br><span class="gradient">berdampak nyata.</span></h1>
-          <p>
-            Paguyuban Jogja Bersatu hadir sebagai ruang kolaborasi masyarakat
-            untuk membangun kepedulian, memperkuat persaudaraan, dan menghadirkan
-            aksi sosial yang berkelanjutan.
-          </p>
-          <div class="hero-cta">
-            <a href="#program" class="btn btn-primary">Lihat Program →</a>
-            <button class="btn btn-outline" data-modal="register">Gabung Sekarang</button>
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pulse"></span> Ruang kolaborasi masyarakat</div>
+          <h1>Bersatu untuk <span>Jogja</span> yang lebih peduli.</h1>
+          <p>Paguyuban Jogja Bersatu mempertemukan warga, komunitas, dan relawan untuk menciptakan aksi sosial yang terukur, transparan, dan berkelanjutan.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="#program">Lihat Program <span aria-hidden="true">↗</span></a>
+            <button class="btn btn-soft btn-lg" data-open-auth="register">Gabung Gerakan</button>
+          </div>
+          <div class="trust-row" aria-label="Ringkasan organisasi">
+            <div><strong>2.840+</strong><span>Anggota</span></div>
+            <div><strong>46</strong><span>Program aktif</span></div>
+            <div><strong>12</strong><span>Wilayah dampingan</span></div>
           </div>
         </div>
 
-        <div class="visual">
-          <div class="orb">
-            <div class="orb-logo">
-              <img src="logo-pjb.png" alt="PJB">
+        <div class="impact-panel reveal" id="dampak" aria-label="Visualisasi dampak sosial">
+          <div class="panel-glow"></div>
+          <div class="panel-top">
+            <div>
+              <span class="mini-label">IMPACT PULSE</span>
+              <h2>+38.6%</h2>
+              <p>Dampak sosial · 12 bulan terakhir</p>
             </div>
-          </div>
-          <div class="chip c1"><strong>Kolaborasi</strong>Menyatukan potensi</div>
-          <div class="chip c2"><strong>Peduli</strong>Untuk sesama</div>
-          <div class="chip c3"><strong>Aksi</strong>Dari Jogja untuk Indonesia</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="tentang">
-      <div class="container about">
-        <div class="about-box">
-          <div class="eyebrow">Tentang PJB</div>
-          <h2>Satu langkah kecil, satu perubahan besar.</h2>
-          <p>
-            Menjadi bagian dari komunitas berarti ikut menciptakan lingkungan
-            yang lebih peduli, inklusif, dan saling menguatkan.
-          </p>
-
-          <div class="checks">
-            <div><span class="check">✦</span> Menguatkan solidaritas masyarakat</div>
-            <div><span class="check">✦</span> Mendorong aksi sosial nyata</div>
-            <div><span class="check">✦</span> Membuka ruang kolaborasi</div>
-          </div>
-        </div>
-
-        <div>
-          <div class="section-head left">
-            <h2>Komunitas yang tumbuh bersama</h2>
-            <p>
-              PJB menjadi penghubung ide, relawan, dan aksi untuk menjawab
-              kebutuhan sosial di sekitar kita.
-            </p>
+            <span class="status"><i></i> Live</span>
           </div>
 
-          <div class="stats">
-            <div class="stat"><b>24+</b><span>Kegiatan</span></div>
-            <div class="stat"><b>500+</b><span>Relawan</span></div>
-            <div class="stat"><b>12</b><span>Komunitas</span></div>
-            <div class="stat"><b>∞</b><span>Semangat</span></div>
+          <div class="chart" aria-label="Grafik dampak meningkat dari bulan ke bulan">
+            <div class="chart-grid"></div>
+            <svg viewBox="0 0 600 230" role="img" aria-label="Grafik garis dampak sosial">
+              <defs>
+                <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#4fc3a1" stop-opacity=".38"/>
+                  <stop offset="100%" stop-color="#4fc3a1" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="area" d="M0 194 C55 185,72 160,112 171 S178 150,220 153 S275 119,321 132 S379 95,420 111 S476 78,520 83 S570 54,600 43 L600 230 L0 230Z"/>
+              <path class="line" d="M0 194 C55 185,72 160,112 171 S178 150,220 153 S275 119,321 132 S379 95,420 111 S476 78,520 83 S570 54,600 43"/>
+              <circle cx="600" cy="43" r="6" class="dot"/>
+            </svg>
+            <div class="chart-labels"><span>Jan</span><span>Apr</span><span>Jul</span><span>Okt</span><span>Des</span></div>
+          </div>
+
+          <div class="metrics">
+            <div><span class="metric-icon">♡</span><strong>18.420</strong><small>Penerima manfaat</small></div>
+            <div><span class="metric-icon">↗</span><strong>Rp 486 jt</strong><small>Dana tersalurkan</small></div>
+            <div><span class="metric-icon">◎</span><strong>94.8%</strong><small>Realisasi program</small></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="program">
+    <section class="section about" id="tentang">
       <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Program utama</div>
-          <h2>Wujudkan kepedulian menjadi aksi</h2>
-          <p>
-            Beberapa ruang gerak yang dapat dikembangkan bersama anggota
-            dan mitra PJB.
-          </p>
+        <div class="section-heading reveal">
+          <span class="eyebrow">Tentang kami</span>
+          <h2>Satu paguyuban, banyak kebaikan.</h2>
+          <p>Kami percaya perubahan besar lahir dari kepedulian kecil yang dilakukan bersama.</p>
         </div>
+        <div class="values-grid">
+          <article class="value-card reveal"><div class="icon-box">✦</div><h3>Kolaboratif</h3><p>Menghubungkan warga, komunitas, pelaku usaha, dan relawan dalam satu ekosistem aksi.</p></article>
+          <article class="value-card reveal"><div class="icon-box">◈</div><h3>Transparan</h3><p>Setiap program dirancang dengan target, indikator, dan pelaporan yang mudah dipahami.</p></article>
+          <article class="value-card reveal"><div class="icon-box">⌁</div><h3>Berkelanjutan</h3><p>Mendorong solusi yang dapat tumbuh dan memberi manfaat jangka panjang bagi masyarakat.</p></article>
+        </div>
+      </div>
+    </section>
 
-        <div class="cards">
-          <article class="card">
-            <div class="icon">♥</div>
-            <h3>Aksi Sosial</h3>
-            <p>Bakti sosial, bantuan kemanusiaan, dan kegiatan tanggap kebutuhan masyarakat.</p>
+    <section class="section programs" id="program">
+      <div class="container">
+        <div class="section-heading split reveal">
+          <div><span class="eyebrow">Program unggulan</span><h2>Aksi nyata, dampak terasa.</h2></div>
+          <a href="#kontak" class="text-link">Ajukan kolaborasi <span>→</span></a>
+        </div>
+        <div class="program-grid">
+          <article class="program-card program-featured reveal">
+            <div class="program-art art-one"><span>01</span><b>Warga<br>Berdaya</b></div>
+            <div class="program-content"><span class="tag">Pemberdayaan</span><h3>Penguatan ekonomi keluarga dan komunitas.</h3><p>Pelatihan keterampilan, pendampingan UMKM, dan akses jejaring untuk warga.</p><div class="progress"><span style="width:82%"></span></div><small>82% target tercapai</small></div>
           </article>
-
-          <article class="card">
-            <div class="icon">⌁</div>
-            <h3>Pemberdayaan</h3>
-            <p>Mendorong kemandirian melalui edukasi, pelatihan, dan kolaborasi komunitas.</p>
+          <article class="program-card reveal">
+            <div class="program-art art-two"><span>02</span><b>Jogja<br>Peduli</b></div>
+            <div class="program-content"><span class="tag">Kemanusiaan</span><h3>Respons cepat untuk kondisi darurat.</h3><p>Relawan dan logistik bergerak bersama saat masyarakat membutuhkan.</p><div class="progress"><span style="width:68%"></span></div><small>68% target tercapai</small></div>
           </article>
-
-          <article class="card">
-            <div class="icon">◎</div>
-            <h3>Lingkungan</h3>
-            <p>Gerakan bersama untuk lingkungan yang lebih bersih, sehat, dan berkelanjutan.</p>
+          <article class="program-card reveal">
+            <div class="program-art art-three"><span>03</span><b>Hijau<br>Bersama</b></div>
+            <div class="program-content"><span class="tag">Lingkungan</span><h3>Lingkungan sehat dimulai dari sekitar.</h3><p>Aksi bersih lingkungan, edukasi, dan pengelolaan sampah berbasis warga.</p><div class="progress"><span style="width:91%"></span></div><small>91% target tercapai</small></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="kontak">
-      <div class="container">
-        <div class="section-head">
-          <div class="eyebrow">Mari terhubung</div>
-          <h2>Jadilah bagian dari gerakan</h2>
-          <p>
-            Punya ide kegiatan, ingin menjadi relawan, atau ingin berkolaborasi?
-            Kami terbuka untuk Anda.
-          </p>
-        </div>
-
-        <div class="contact">
-          <div class="card">
-            <h3>Paguyuban Jogja Bersatu</h3>
-            <p class="contact-desc">
-              Ruang bersama untuk membangun kepedulian dan aksi sosial masyarakat.
-            </p>
-            <div class="contact-info">
-              ✉ info@paguyubanjogjabersatu.org<br>
-              ⌖ Yogyakarta, Indonesia
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Mulai berkolaborasi</h3>
-            <p class="contact-desc">Daftarkan diri dan ikuti kegiatan PJB.</p>
-            <button class="btn btn-primary" data-modal="register">
-              Daftar sebagai anggota →
-            </button>
-          </div>
-        </div>
+    <section class="section join">
+      <div class="container join-box reveal">
+        <div><span class="eyebrow">Mari bergerak</span><h2>Kontribusi kecilmu bisa menjadi dampak besar.</h2><p>Jadilah bagian dari jaringan masyarakat yang saling menguatkan.</p></div>
+        <div class="join-actions"><button class="btn btn-primary btn-lg" data-open-auth="register">Daftar sebagai anggota</button><a class="btn btn-light btn-lg" href="#kontak">Hubungi kami</a></div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div>© 2026 Paguyuban Jogja Bersatu. Bersama untuk sesama.</div>
-      <div class="social">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">WhatsApp</a>
-      </div>
+  <footer id="kontak">
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="#beranda"><img src="logo-pjb.png" alt=""><span><strong>Paguyuban Jogja</strong><small>Bersatu</small></span></a><p>Wadah kolaborasi untuk masyarakat yang peduli dan mau bergerak bersama.</p></div>
+      <div><h3>Navigasi</h3><a href="#tentang">Tentang</a><a href="#program">Program</a><a href="#dampak">Dampak</a></div>
+      <div><h3>Kontak</h3><p>Yogyakarta, Indonesia</p><a href="mailto:halo@pjb.or.id">halo@pjb.or.id</a></div>
     </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Paguyuban Jogja Bersatu.</span><span>Bersatu · Peduli · Berdampak</span></div>
   </footer>
 
-  <div class="modal" id="modal">
-    <div class="modal-box">
-      <button class="close" id="close" aria-label="Tutup">×</button>
-
-      <div id="loginForm">
-        <h3>Selamat datang kembali</h3>
-        <div class="modal-sub">Login untuk melanjutkan ke ruang anggota.</div>
-
-        <form class="form" data-demo="Login berhasil (demo).">
-          <div class="field">
-            <label for="login-email">Email</label>
-            <input id="login-email" type="email" placeholder="nama@email.com" required>
-          </div>
-          <div class="field">
-            <label for="login-password">Password</label>
-            <input id="login-password" type="password" placeholder="••••••••" required>
-          </div>
-          <button class="btn btn-primary" type="submit">Login</button>
-        </form>
-
-        <div class="switch">
-          Belum punya akun?
-          <a href="#" data-switch="register">Daftar sekarang</a>
-        </div>
-      </div>
-
-      <div id="registerForm" hidden>
-        <h3>Bergabung dengan PJB</h3>
-        <div class="modal-sub">Buat akun anggota baru.</div>
-
-        <form class="form" data-demo="Pendaftaran berhasil (demo).">
-          <div class="field">
-            <label for="register-name">Nama lengkap</label>
-            <input id="register-name" type="text" placeholder="Nama lengkap" required>
-          </div>
-          <div class="field">
-            <label for="register-email">Email</label>
-            <input id="register-email" type="email" placeholder="nama@email.com" required>
-          </div>
-          <div class="field">
-            <label for="register-password">Password</label>
-            <input id="register-password" type="password" placeholder="Minimal 8 karakter" minlength="8" required>
-          </div>
-          <button class="btn btn-primary" type="submit">Daftar</button>
-        </form>
-
-        <div class="switch">
-          Sudah punya akun?
-          <a href="#" data-switch="login">Login</a>
-        </div>
-      </div>
+  <div class="modal" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title" hidden>
+    <div class="modal-backdrop" data-close-auth></div>
+    <div class="auth-card">
+      <button class="modal-close" type="button" aria-label="Tutup" data-close-auth>×</button>
+      <div class="auth-head"><span class="eyebrow">PJB MEMBER</span><h2 id="auth-title">Selamat datang.</h2><p id="auth-subtitle">Masuk untuk melanjutkan ke ruang anggota.</p></div>
+      <div class="auth-tabs" role="tablist" aria-label="Autentikasi"><button class="active" data-auth-tab="login" role="tab">Masuk</button><button data-auth-tab="register" role="tab">Daftar</button></div>
+      <form id="login-form" class="auth-form">
+        <label>Email<input type="email" name="email" placeholder="nama@email.com" autocomplete="email" required></label>
+        <label>Kata sandi<input type="password" name="password" placeholder="••••••••" autocomplete="current-password" required></label>
+        <button class="btn btn-primary btn-full" type="submit">Masuk ke akun</button>
+      </form>
+      <form id="register-form" class="auth-form" hidden>
+        <label>Nama lengkap<input type="text" name="name" placeholder="Nama Anda" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" placeholder="nama@email.com" autocomplete="email" required></label>
+        <label>Kata sandi<input type="password" name="password" placeholder="Minimal 8 karakter" minlength="8" autocomplete="new-password" required></label>
+        <button class="btn btn-primary btn-full" type="submit">Buat akun anggota</button>
+      </form>
+      <p class="auth-note" id="auth-note">Demo front-end: data belum dikirim ke server.</p>
     </div>
   </div>
-
-  <div class="toast" id="toast" role="status"></div>
 
   <script src="script.js"></script>
 </body>
