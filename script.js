@@ -6,7 +6,6 @@ const registerForm = document.querySelector('#register-form');
 const authTitle = document.querySelector('#auth-title');
 const authSubtitle = document.querySelector('#auth-subtitle');
 const authNote = document.querySelector('#auth-note');
-const tabs = document.querySelectorAll('[data-auth-tab]');
 const openButtons = document.querySelectorAll('[data-open-auth]');
 const closeButtons = document.querySelectorAll('[data-close-auth]');
 
@@ -23,17 +22,10 @@ mainNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 
 function setAuthMode(mode) {
   const isLogin = mode === 'login';
-  loginForm.hidden = !isLogin;
-  registerForm.hidden = isLogin;
-  tabs.forEach(tab => {
-    const active = tab.dataset.authTab === mode;
-    tab.classList.toggle('active', active);
-    tab.setAttribute('aria-selected', String(active));
-  });
-  authTitle.textContent = isLogin ? 'Selamat datang.' : 'Bergabung bersama kami.';
-  authSubtitle.textContent = isLogin
-    ? 'Masuk untuk melanjutkan ke ruang anggota.'
-    : 'Buat akun untuk ikut dalam gerakan sosial PJB.';
+  document.querySelector('#login-panel').hidden = !isLogin;
+  document.querySelector('#register-panel').hidden = isLogin;
+  authTitle.textContent = isLogin ? 'Selamat datang kembali.' : 'Bergabung bersama kami.';
+  authSubtitle.textContent = isLogin ? 'Akses ruang anggota Paguyuban Jogja Bersatu.' : 'Buat akun untuk ikut dalam gerakan sosial PJB.';
   authNote.textContent = 'Demo front-end: data belum dikirim ke server.';
 }
 
@@ -51,7 +43,6 @@ function isLoginMode() { return !loginForm.hidden; }
 
 openButtons.forEach(btn => btn.addEventListener('click', () => openAuth(btn.dataset.openAuth)));
 closeButtons.forEach(btn => btn.addEventListener('click', closeAuth));
-tabs.forEach(tab => tab.addEventListener('click', () => setAuthMode(tab.dataset.authTab)));
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeAuth(); });
 
 function demoSubmit(form, mode) {
@@ -89,3 +80,6 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
 } else {
   reveals.forEach(el => el.classList.add('visible'));
 }
+
+document.querySelectorAll('[data-switch-auth]').forEach(btn => btn.addEventListener('click', () => setAuthMode(btn.dataset.switchAuth)));
+document.querySelector('.forgot-btn')?.addEventListener('click', () => { authNote.textContent = 'Demo: alur reset kata sandi siap dihubungkan ke email/API backend.'; });

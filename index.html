@@ -143,7 +143,7 @@
     <div class="container footer-grid">
       <div><a class="brand footer-brand" href="#beranda"><img src="logo-pjb.png" alt=""><span><strong>Paguyuban Jogja</strong><small>Bersatu</small></span></a><p>Wadah kolaborasi untuk masyarakat yang peduli dan mau bergerak bersama.</p></div>
       <div><h3>Navigasi</h3><a href="#tentang">Tentang</a><a href="#program">Program</a><a href="#dampak">Dampak</a></div>
-      <div><h3>Kontak</h3><p>Yogyakarta, Indonesia</p><a href="mailto:halo@pjb.or.id">halo@pjb.or.id</a></div>
+      <div><h3>Kontak</h3><p>Yogyakarta, Indonesia</p><a href="mailto:halo@pjb.or.id">halo@pjb.or.id</a><div class="socials" aria-label="Media sosial Paguyuban Jogja Bersatu"><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="TikTok">♪</a><a href="#" aria-label="WhatsApp">◔</a></div></div>
     </div>
     <div class="container footer-bottom"><span>© <span id="year"></span> Paguyuban Jogja Bersatu.</span><span>Bersatu · Peduli · Berdampak</span></div>
   </footer>
@@ -152,19 +152,28 @@
     <div class="modal-backdrop" data-close-auth></div>
     <div class="auth-card">
       <button class="modal-close" type="button" aria-label="Tutup" data-close-auth>×</button>
-      <div class="auth-head"><span class="eyebrow">PJB MEMBER</span><h2 id="auth-title">Selamat datang.</h2><p id="auth-subtitle">Masuk untuk melanjutkan ke ruang anggota.</p></div>
-      <div class="auth-tabs" role="tablist" aria-label="Autentikasi"><button class="active" data-auth-tab="login" role="tab">Masuk</button><button data-auth-tab="register" role="tab">Daftar</button></div>
-      <form id="login-form" class="auth-form">
-        <label>Email<input type="email" name="email" placeholder="nama@email.com" autocomplete="email" required></label>
-        <label>Kata sandi<input type="password" name="password" placeholder="••••••••" autocomplete="current-password" required></label>
-        <button class="btn btn-primary btn-full" type="submit">Masuk ke akun</button>
-      </form>
-      <form id="register-form" class="auth-form" hidden>
-        <label>Nama lengkap<input type="text" name="name" placeholder="Nama Anda" autocomplete="name" required></label>
-        <label>Email<input type="email" name="email" placeholder="nama@email.com" autocomplete="email" required></label>
-        <label>Kata sandi<input type="password" name="password" placeholder="Minimal 8 karakter" minlength="8" autocomplete="new-password" required></label>
-        <button class="btn btn-primary btn-full" type="submit">Buat akun anggota</button>
-      </form>
+      <div class="auth-brand"><img src="logo-pjb.png" alt="Logo Paguyuban Jogja Bersatu"><span><strong>Paguyuban Jogja Bersatu</strong><small>Ruang Anggota</small></span></div>
+      <div class="auth-panel" id="login-panel">
+        <div class="auth-head"><span class="eyebrow">LOGIN ANGGOTA</span><h2 id="auth-title">Selamat datang kembali.</h2><p>Akses ruang anggota Paguyuban Jogja Bersatu.</p></div>
+        <form id="login-form" class="auth-form">
+          <label>Email<input type="email" name="email" placeholder="nama@email.com" autocomplete="email" required></label>
+          <label>Kata sandi<input type="password" name="password" placeholder="••••••••" autocomplete="current-password" required></label>
+          <div class="form-meta"><label class="check"><input type="checkbox" name="remember"> Ingat saya</label><button type="button" class="forgot-btn">Lupa kata sandi?</button></div>
+          <button class="btn btn-primary btn-full" type="submit">Masuk ke akun</button>
+        </form>
+        <p class="auth-switch">Belum punya akun? <button type="button" data-switch-auth="register">Daftar sekarang</button></p>
+      </div>
+      <div class="auth-panel" id="register-panel" hidden>
+        <div class="auth-head"><span class="eyebrow">DAFTAR ANGGOTA</span><h2>Bergabung bersama kami.</h2><p>Buat akun untuk ikut dalam gerakan sosial PJB.</p></div>
+        <form id="register-form" class="auth-form">
+          <label>Nama lengkap<input type="text" name="name" placeholder="Nama Anda" autocomplete="name" required></label>
+          <label>Email<input type="email" name="email" placeholder="nama@email.com" autocomplete="email" required></label>
+          <label>Kata sandi<input type="password" name="password" placeholder="Minimal 8 karakter" minlength="8" autocomplete="new-password" required></label>
+          <label class="check terms"><input type="checkbox" name="terms" required> Saya menyetujui ketentuan keanggotaan PJB.</label>
+          <button class="btn btn-primary btn-full" type="submit">Buat akun anggota</button>
+        </form>
+        <p class="auth-switch">Sudah punya akun? <button type="button" data-switch-auth="login">Masuk di sini</button></p>
+      </div>
       <p class="auth-note" id="auth-note">Demo front-end: data belum dikirim ke server.</p>
     </div>
   </div>
